@@ -60,6 +60,17 @@ app.post("/api/category", (req, resp) => {
   }
 });
 
+app.delete("/api/category/:id", (req,resp)=>{
+  let id = req.params.id;
+  connection.query(`DELETE FROM master_category WHERE id = ${id}`,(err,result)=>{
+    if(err){
+      return resp.status(200).json({'msg':'Error in SQL'});
+    }else{
+      return resp.status(200).json({'msg':`Record with id ${id} deleted`});
+    }
+  })
+})
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
