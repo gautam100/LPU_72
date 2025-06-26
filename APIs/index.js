@@ -60,16 +60,35 @@ app.post("/api/category", (req, resp) => {
   }
 });
 
-app.delete("/api/category/:id", (req,resp)=>{
+app.delete("/api/category/:id", (req, resp) => {
   let id = req.params.id;
-  connection.query(`DELETE FROM master_category WHERE id = ${id}`,(err,result)=>{
-    if(err){
-      return resp.status(200).json({'msg':'Error in SQL'});
-    }else{
-      return resp.status(200).json({'msg':`Record with id ${id} deleted`});
+  connection.query(
+    `DELETE FROM master_category WHERE id = ${id}`,
+    (err, result) => {
+      if (err) {
+        return resp.status(200).json({ msg: "Error in SQL" });
+      } else {
+        return resp.status(200).json({ msg: `Record with id ${id} deleted` });
+      }
     }
-  })
-})
+  );
+});
+
+app.put("/api/category", (req, resp) => {
+  let body = req.body;
+  let id = body.id;
+  connection.query(
+    `UPDATE master_category SET category_name = '${body.category}', description ='${body.description}', 
+    is_enable = '${body.isenable}' WHERE id = ${id}`,
+    (err, result) => {
+      if (err) {
+        return resp.status(200).json({'msg':`Error in SQL!`});
+      } else {
+        return resp.status(200).json({'msg':`Record with id ${id} is updated`});
+      }
+    }
+  );
+});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app.listen(3000, () => {
