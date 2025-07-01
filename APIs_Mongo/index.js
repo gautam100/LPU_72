@@ -65,6 +65,41 @@ app.get("/category",async (req,resp)=>{
 
 })
 
+// Fetch all record
+app.get("/api/category",async (req,resp)=>{
+  const categoryList = await Category.find();
+  if(!categoryList){
+    return resp.status(500).json({msg:"Internal Error!"});
+  }
+  return resp.status(200).json({msg:categoryList});
+})
+
+//Fetch single document
+app.get("/api/category/:id",async(req,resp)=>{
+  const category = await Category.findById(req.params.id)
+  if(!category._id){
+    return resp.status(500).json({msg:'Internal Error'})
+  }
+  return resp.status(200).json({msg:category})
+})
+
+//Insert document
+app.post("/api/category",async(req,resp)=>{
+  const body = req.body;
+  // Validation
+  if(!body.categoryName){
+    return resp.status(404).json({err:"Mandatory field is missing!"})
+  }
+  //insertion
+  const result = await Category.create({
+    categoryName:body.categoryName,
+    description: body.description,
+    is_enable: body.is_enable
+  })
+  //response
+  return resp.status(200).json({msg:"One Record Inserted Successfully!"})
+})
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app.listen(PORT, () => {
