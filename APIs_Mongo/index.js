@@ -100,6 +100,18 @@ app.post("/api/category",async(req,resp)=>{
   return resp.status(200).json({msg:"One Record Inserted Successfully!"})
 })
 
+//Update
+app.patch("/api/category/:id",async (req,resp)=>{
+  await Category.findByIdAndUpdate(req.params.id,{description:"Any new description.."});
+  return resp.status(200).json({msg:'Record updated successfully!'})
+})
+
+//Delete
+app.delete("/api/category/:id",async (req,resp)=>{
+  await Category.findByIdAndDelete(req.params.id)
+  return resp.status(200).json({msg:'Record deleted successfully'})
+})
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app.listen(PORT, () => {
