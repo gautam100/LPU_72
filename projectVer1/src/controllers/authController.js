@@ -10,7 +10,7 @@ const doLogin = async (req, resp) => {
         message: "User doesn't exist in database",
       });
     } else {
-      // JWT Implementation
+      //JWT Implementation
       const config = {
         jwt: {
           secret: "LPU@summer-training-2025", //Secret Key
