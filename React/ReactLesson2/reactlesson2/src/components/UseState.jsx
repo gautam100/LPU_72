@@ -10,6 +10,11 @@ const UseState = () => {
   const handleDiv2 = () => {
     setDiv2(!div2);
   };
+  
+  const [country,setCountry] = useState("")
+  function handleDD(e){
+    setCountry(e.target.value);
+  }
   return (
     <div>
       <div className="row">
@@ -31,6 +36,20 @@ const UseState = () => {
           <button className="btn btn-warning" onClick={() => handleDiv2()}>
             Toggle
           </button>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col">
+          
+          <select onChange={(event)=>handleDD(event)}>
+            <option>Select Country</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>Aus</option>
+          </select>
+        </div>
+        <div className="col">
+          Selected Country is : {country? country: 'Not selected'}
         </div>
       </div>
     </div>
