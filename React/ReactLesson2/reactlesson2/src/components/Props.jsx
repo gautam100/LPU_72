@@ -9,6 +9,12 @@ const Props = () => {
   let studMob = "+91-9876567897";
   let studLinkedin = "www.linkedin.comsatyam";
 
+  let companyInfo = {
+    name: "Microsoft Corp.",
+    department: "Frontend Engineering",
+    skills: ["Angular", "React", "Bootstrap", "Tailwind", "Micro Frontend"],
+    github: "www.github.com\satyam"
+  }
   return (
     <>
       <div className="container">
@@ -20,7 +26,7 @@ const Props = () => {
             mob={studMob}
             linkedIn={studLinkedin}
           />
-          <ProffInfo name="xyz" />
+          <ProffInfo data={companyInfo} />
         </div>
       </div>
     </>
