@@ -30,7 +30,7 @@ const Nav = () => {
                 DataBinding
               </Link>
             </li>
-            
+
             <li className="nav-item">
               <Link className="nav-link" to="/state">
                 UseState
@@ -40,6 +40,12 @@ const Nav = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/props">
                 Props
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/controlled-component">
+                Controlled Component
               </Link>
             </li>
           </ul>
