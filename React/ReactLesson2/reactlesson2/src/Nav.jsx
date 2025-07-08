@@ -54,6 +54,12 @@ const Nav = () => {
                 useEffect
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/uncontrolled-component">
+                Uncontrolled Component
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

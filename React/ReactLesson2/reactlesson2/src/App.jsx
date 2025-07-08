@@ -9,6 +9,7 @@ import UseState from "./components/UseState";
 import Props from "./components/Props";
 import ControlledComponent from "./components/ControlledComponent";
 import UseEffect from "./components/UseEffect";
+import UncontrolledComponent from "./components/UncontrolledComponent";
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
             <Route path="/props" element={<Props />} />
             <Route path="/controlled-component" element={<ControlledComponent />} />
             <Route path="/use-effect" element={<UseEffect />} />
+            <Route path="/uncontrolled-component" element={<UncontrolledComponent />} />
+
           </Routes>
         </BrowserRouter>
       </div>
