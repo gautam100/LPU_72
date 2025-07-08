@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   
   const product = [
-    {item:"Apple",price:40,total:1},
+    {item:"Apple",price:40,total:0},
     {item:"Banana",price:6, total:0},
     {item:"Orange",price:20,total:0}
   ];

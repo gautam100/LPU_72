@@ -8,6 +8,7 @@ import DataBinding from "./components/DataBinding";
 import UseState from "./components/UseState";
 import Props from "./components/Props";
 import ControlledComponent from "./components/ControlledComponent";
+import UseEffect from "./components/UseEffect";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/state" element={<UseState />} />
             <Route path="/props" element={<Props />} />
             <Route path="/controlled-component" element={<ControlledComponent />} />
+            <Route path="/use-effect" element={<UseEffect />} />
           </Routes>
         </BrowserRouter>
       </div>

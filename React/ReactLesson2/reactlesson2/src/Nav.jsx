@@ -48,6 +48,12 @@ const Nav = () => {
                 Controlled Component
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/use-effect">
+                useEffect
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
