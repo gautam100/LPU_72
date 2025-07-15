@@ -1,5 +1,5 @@
 let express = require("express");
-let connection = require("./connection.js");
+//let connection = require("./connection.js");
 let bodyParser = require("body-parser");
 
 let app = express();
@@ -17,7 +17,7 @@ app.get("/api/category", (req, resp) => {
       if (err) {
         return resp.json({ msg: "Error in SQL!" });
       } else {
-        return resp.json({ msg: result });
+        return resp.json({ msg: "Successful" });
       }
     }
   );
